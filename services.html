@@ -1,0 +1,439 @@
+﻿    <!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <title>Entregas</title>
+
+        <meta name="keywords" content="">
+
+        <meta name="description" content="">
+
+        <meta name="author" content="">
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">  
+
+    </head>
+
+    <body>
+
+    <div class="header_section">
+
+    <div class="container-fluid">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="logo">
+    <a href="https://www.univesp.br" target="_blank"><img src="./images/logo-home.png">
+    </a>
+    <a href="index.html"><img src="images/logo.png">
+    </a>
+    </div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon">
+            </span>
+
+                    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+                        <ul class="navbar-nav ml-auto">
+
+    <a href="https://www.facebook.com/bortos.dogs?mibextid=kFxxJD" target="_blank"><img src="./images/facebook-icons.png">
+    </a>
+                            
+    <a href="https://www.instagram.com/bortos.dogs?igsh=cXJjbmp6Z3o1Z2p3" target="_blank">
+    <img src="./images/instagram-icons.png">
+    </a>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="employee.html">Cadastro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="services.html">Entregas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">Sobre Nós</a>
+                            </li>
+                                    <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+    <i class="fa fa-search" aria-hidden="true">
+    </i>
+    </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="services_section02 layout_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="services_taital">Cadastro de Entregas</h1>
+                        <p class="services_text">Dados de cada entrega </p>
+                    </div>
+                </div>
+
+
+                <!-- form id="entregaForm" action="php/processar_entrega.php" method="post" -->
+                <form id="entregaForm" action="php/cadastro_entregas.php" method="post">
+
+            <br />
+
+            <fieldset>
+
+            <legend style="color: white;font-size: 36px">
+    <b>Dados Cliente</b>
+    </legend>
+
+            <table cellspacing="10">
+            <tr>
+            <td>
+                <label for="nome"> <h2 style="color: #ffffff;">
+                    <b>Nome:</b></h2>
+                </label>
+            </td>
+            <td align="left">
+                <input type="text" id="nome" name="nome" required>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <label for="numeroPedido"><h2 style="color: #ffffff;"><b>Número do Pedido:</b></h2></label>
+            </td>
+            <td align="left">
+                <input type="text" id="numeroPedido" name="numeroPedido" required>
+            </td>
+            </tr>
+    <!--endereço-->
+
+
+
+
+            <tr>
+            <td>
+                <label for="endereco"><h2 style="color: #ffffff;"><b>Endereço:</b></h2></label>
+            </td>
+            <td align="left" colspan="3">
+
+
+
+
+
+                <div>
+                    <!--<label for="endereco_lanchonete">Endereço da Lanchonete:</label>-->
+                    <input type="text" id="endereco_lanchonete" value="Rua Boa Morte, 1101, Piracicaba, SP">
+                </div>
+
+
+
+
+            <div>
+                <input placeholder="Seu Endereço:" type="text" id="endereco_cliente" name="EnderecoCliente" required>
+                <!--<label for="endereco_cliente">Seu Endereço:</label>-->
+            </div>
+
+
+                <button type="button" onclick="calcularTaxa()" id="calcularTaxa()">Calcular Taxa</button>
+
+                <span id="taxaEntrega"></span>
+
+            <div id="resultado"></div>
+            <div id="map"></div>
+
+            </td>
+
+
+            </tr>
+
+
+            <tr>
+
+            <td>
+
+                <label><h2 style="color: #ffffff;"><b>Data da Entrega:</b></h2> </label>
+
+            </td>
+
+            <td align="left">
+                <input type="date" id="dataEntrega" name="dataEntrega" required>
+
+            </td>
+
+
+            <td>
+
+                <label for="horaEntrega"><h2 style="color: #ffffff;"><b>Hora:</b></h2> </label>
+
+            </td>
+
+            <td align="left">
+
+                <input type="time" id="horaEntrega" name="horaEntrega" required>
+
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td>
+
+                <label for="valor"><h2 style="color: #ffffff;"><b>Valor:</b></h2></label>
+            </td>
+
+            <td align="left">
+
+                <input type="number" id="valor" name="valor" step="0.01" required>
+
+            </td>
+
+            </tr>
+
+            <tr>
+
+            <td>
+
+                <label for="telefone"><h2 style="color: #ffffff;"><b>Telefone:</b></h2></label>
+
+            </td>
+
+                <td align="left">
+
+                <input type="tel" id="telefone" name="telefone" required>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <label for="itensPedido"><h2 style="color: #ffffff;"><b>Itens do Pedido:</b></h2></label>
+
+                </td>
+
+                <td align="left" colspan="3">
+
+                    <textarea id="itensPedido" name="itensPedido" rows="4" cols="50" required></textarea>
+
+                </td>
+
+            </tr>
+
+            </table>
+
+            </fieldset>
+
+
+            <br />
+
+            
+        <br />
+            
+    <input type="submit" value="Registrar Entrega">
+
+    <input type="reset" value="Limpar">
+
+    </form>
+
+
+
+        
+        <script>
+            let map;
+            let geocoder;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -22.7266, lng: -47.6495}, // Coordenadas de Piracicaba (aproximadas)
+                    zoom: 12
+                });
+                geocoder = new google.maps.Geocoder();
+            }
+
+            function geocodeAddress(address) {
+                return new Promise((resolve, reject) => {
+                    geocoder.geocode({ 'address': address }, function(results, status) {
+                        if (status === 'OK') {
+                            resolve(results[0].geometry.location);
+                        } else {
+                            reject('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                });
+            }
+
+            function calcularDistancia(latLng1, latLng2) {
+                // Função simplificada para calcular distância em linha reta (em km)
+                const R = 6371; // Raio da Terra em km
+                const lat1Rad = toRadians(latLng1.lat());
+                const lon1Rad = toRadians(latLng1.lng());
+                const lat2Rad = toRadians(latLng2.lat());
+                const lon2Rad = toRadians(latLng2.lng());
+
+                const deltaLat = lat2Rad - lat1Rad;
+                const deltaLon = lon2Rad - lon1Rad;
+
+                const a = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+                        Math.cos(lat1Rad) * Math.cos(lat2Rad) *
+                        Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+                return R * c;
+            }
+
+            function calcularTaxaEntrega(distanciaKm) {
+                // Sua lógica de precificação da taxa de entrega
+                const taxaBase = 5.00; // R$ 5,00 de taxa base
+                const taxaPorKm = 1.50; // R$ 1,50 por km
+
+                if (distanciaKm <= 2) {
+                    return taxaBase;
+                } else {
+                    return taxaBase + (distanciaKm - 2) * taxaPorKm;
+                }
+            }
+
+            async function calcularTaxa() {
+                const enderecoLanchonete = document.getElementById('endereco_lanchonete').value;
+                const enderecoCliente = document.getElementById('endereco_cliente').value;
+                const resultadoDiv = document.getElementById('resultado');
+
+                try {
+                    resultadoDiv.innerText = "Buscando coordenadas...";
+                    const latLngLanchonete = await geocodeAddress(enderecoLanchonete);
+                    const latLngCliente = await geocodeAddress(enderecoCliente);
+
+                    const distancia = calcularDistancia(latLngLanchonete, latLngCliente);
+                    const taxa = calcularTaxaEntrega(distancia);
+
+                    resultadoDiv.innerText = `Distância aproximada: ${distancia.toFixed(2)} km\nTaxa de entrega: R$ ${taxa.toFixed(2)}`;
+
+                    // Opcional: Mostrar marcadores no mapa
+                    new google.maps.Marker({position: latLngLanchonete, map: map, title: 'Lanchonete'});
+                    new google.maps.Marker({position: latLngCliente, map: map, title: 'Cliente'});
+                    map.fitBounds(new google.maps.LatLngBounds(latLngLanchonete, latLngCliente));
+
+                } catch (error) {
+                    resultadoDiv.innerText = `Erro: ${error}`;
+                }
+            }
+
+            function toRadians(degrees) {
+                return degrees * Math.PI / 180;
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places"></script>
+    
+        <br />
+        <br />
+
+            </div>
+
+        </div>
+
+
+
+    <!-- footer section start -->
+        <div class="footer_section layout_padding">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <h3 class="useful_text">Projeto Integrador</h3>
+                    <p class="footer_text">Projeto realizado pela turma de alunos da UNIVESP para a disciplina do Projeto Integrador III - DRP04-PJI310-SALA-004GRUPO-015</p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <h3 class="useful_text">Menu</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="employee.html">Cadastro</a></li>
+                            <li><a href="services.html">Entregas</a></li>
+                            <li><a href="about.html">Sobre Nós</a></li>						
+                            <li><a href="contact.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <h1 class="useful_text">UNIVESP</h1>
+                    <p class="dummy_text">Primeiro Semestre 2.025 </p>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <h1 class="useful_text">Nossa Localização</h1>
+                    <div class="location_text">
+                        <ul>
+                            <li>
+                            <a href="#">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Endereço : Rua Boa Morte, 1101, Piracicaba, SP, Brazil</span>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="#">
+                            <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Telefone : +55 19 99210-1000</span>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="#">
+                            <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : bortodogs@gmail.com</span>
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer section end -->
+        <!-- copyright section start -->
+        <div class="copyright_section">
+            <div class="container">
+                <p class="copyright_text">All Rights Reserved. Design by <a href="https://univesp.br">DRP04-PJI310-SALA-004GRUPO-015</a></p>
+            </div>
+        </div>
+        <!-- copyright section end -->
+        <!-- Javascript files-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-3.0.0.min.js"></script>
+        <script src="js/plugin.js"></script>
+        <!-- sidebar -->
+        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/custom.js"></script>     
+    </body>
+    </html>

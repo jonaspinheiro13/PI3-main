@@ -1,0 +1,95 @@
+http://localhost/PI3-main/employee.html
+http://localhost/phpmyadmin
+
+RG: 12.345.678-9
+
+CPF: 123.456.789-09
+
+
+
+$conn = new mysqli("127.0.0.1", "USUARIO", "SENHA", "cadastros");
+
+$conn = new mysqli("127.0.0.1", "root", "", "cadastros");
+
+$servername = "127.0.0.1"; 
+$username = "USUARIO"; 
+$password = "SENHA234"; 
+$dbname = "cadastros"; 
+
+
+
+
+MODIFICAÇÕES
+alterei 
+<input type="text" name="email">
+para
+<input type="text" name="nome">
+em dados do veiculo
+
+alterei tambem 
+<form action="php/Script_do_Formulario.php" method="post">
+
+para
+<form action="php/Script_do_Formulario.php" method="post" enctype="multipart/form-data">
+
+isso serve para enviar os dados do formulario, e é necessario ter esse
+enctype ja que o formulario incule upload de arquivos
+linha 87 do codigo
+
+alterei alguns atritubos name no html q estavam incorretos com o php,
+mas espicificamente os dados do veiculo, oque alterei foram os atributos name tambem
+
+
+criei mais uma pasta nos arquivos do site (PI3-main) com o nome de "uploads" pq é nessa pasta que 
+sera enviado a imagem que o usuario vai inserir no html, criei essa pasta de uploads, dentro da
+pasta php, pq o scrip do formulario, vai enviar essa imagem pra la
+
+
+	A TABELA ENTREGADORES QUE TA RELACIONADO COM A PAGINA DE CADASTRO DE CLIENTES
+	A PAGINA employee.html 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE entregas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_cliente VARCHAR(100),
+    numero_pedido VARCHAR(50),
+    data_entrega DATE,
+    hora TIME,
+    valor DECIMAL(10,2),
+    endereco_cliente VARCHAR(255),
+    telefone VARCHAR(20),
+    itens_pedido TEXT
+);
+CREATE TABLE entregadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    sobrenome VARCHAR(100),
+    imagem VARCHAR(255),
+    dia INT,
+    mes INT,
+    ano INT,
+    rg VARCHAR(20),
+    cpf VARCHAR(20),
+    rua VARCHAR(255),
+    numero VARCHAR(10),
+    bairro VARCHAR(100),
+    estado VARCHAR(50),
+    cidade VARCHAR(100),
+    cep VARCHAR(20),
+);
+
+
